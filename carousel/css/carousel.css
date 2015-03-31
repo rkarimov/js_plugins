@@ -1,12 +1,12 @@
 ul.slides-wrapper{
-	position:relative;
-	overflow:hidden;
-	margin:0;
-	padding:0;
-	list-style:none;
+    position:relative;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+    list-style:none;
 }
 ul.slides-wrapper li.slide {
-	float:left;
-	margin:0;
-	padding:0;
+    float:left;
+    margin:0;
+    padding:0;
 }

@@ -1,22 +1,22 @@
 /* Temporary */
 body {
-	margin:10px;
+    margin:10px;
 }
 .slide-shows{
-	overflow:hidden;
+    overflow:hidden;
 }
 .slide-show {
-	float:left;
+    float:left;
 }
 .slide-show  + .slide-show{
-	margin-left:10px;
+    margin-left:10px;
 }
 .slides-viewport{
-	width:450px;
-	overflow:hidden;
+    width:450px;
+    overflow:hidden;
 }
 .slides-wrapper{
-	width:1800px;
+    width:1800px;
 }
 
 /* @end */
