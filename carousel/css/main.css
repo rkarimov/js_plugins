@@ -1,3 +1,23 @@
-#slide-show {
-	height: 432px;
+/* Temporary */
+body {
+	margin:40px;
 }
+.slide-show {
+	margin:0 auto;
+}
+.slide-show  + .slide-show {
+	margin-top:30px !important;
+}
+
+.slides-viewport{
+	width:450px;
+	overflow:hidden;
+}
+.slides-wrapper{
+	width:1800px;
+}
+.slides-wrapper{
+	width:1800px;
+}
+
+/* @end */
