@@ -16,14 +16,14 @@
 		}
 		
 		/**
-		 *
+		 * Slide animation callback
 		 */
 		function slideAnimationCb() {
 			var viewport = this;
 			var slides = $('.slides-wrapper', viewport);
 			var state = viewport.settings.state;
 
-			//resetting position of the show
+			//resetting position of the slides
 			if (state.currentSlide >= state.slidesCount) {
 				state.currentSlide = 1;
 				slides.css({left: 0});
@@ -31,11 +31,13 @@
 		}
 
 		/*
-		 *
+		 * Timer handled slideshow event
 		 */
 		function inervalActionHandler(){
 			var viewport = this;
 			var state = viewport.settings.state;
+
+			//next slide setting up and animation
 			state.currentSlide++;
 			changeSlide.call(viewport);
 		}
@@ -47,7 +49,7 @@
 		function buildSlidesFromList() {
 			var viewport = this;
 			var settings = viewport.settings;
-			var slides = $('<div>'), slide, index;
+			var slides = $('<ul>'), slide, index;
 
 			//setting wrapper to a slideshow
 			this.addClass('slides-viewport');
@@ -59,7 +61,7 @@
 			for (index = 0; index < settings.slides.length; index++) {
 				slide = $('<img>');
 				slide.attr('src', settings.slides[index]);
-				slides.append(slide);
+				slides.append($('<li class="slide">').append(slide));
 
 				//keeping first slide to append it to the end of the slide query for circle animation
 				if (!index) {
@@ -68,7 +70,7 @@
 				}
 			}
 			//appending duplicate of the first slide to the end of the query
-			slides.append(_slide);
+			slides.append($('<li class="slide">').append(_slide));
 
 			//fullfilling initial slideshow state
 			settings.state.currentSlide = 1;
@@ -76,15 +78,21 @@
 			settings.state.slideWidth = settings.slideWidth;
 
 			//getting image height from the last read slide and assigning it to viewport
-			_slide.on('load', function(e){
-				viewport.height($(this).height());
-			});
+			//@TODO remove this logic and replace it with setup one
+			_slide.on('load', function(e){viewport.height($(this).height());});
 		}
 
+		/**
+		 * Sets 'prev', 'next' and pointer elements for slideshow
+		 * @TODO Missing functionality
+		 */
 		function assignControls() {
 			
 		}
-
+		
+		/**
+		 * Inializes slide-shows
+		 */
 		return this.each(function() {
 			var self = $(this);
 
@@ -96,8 +104,8 @@
 				assignControls.call(self);
 			}
 
-			//initializing routine by time interval
-			self.settings.routineId = setInterval(function(){inervalActionHandler.call(this);}.bind(self), 2000);
+			//initializing looped routine
+			self.settings.routineId = setInterval(function(){inervalActionHandler.call(this);}.bind(self), settings.interval);
 		});
 	}
 })(jQuery);

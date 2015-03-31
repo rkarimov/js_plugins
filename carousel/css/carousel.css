@@ -1,6 +1,12 @@
-.slides-wrapper{
+ul.slides-wrapper{
 	position:relative;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	list-style:none;
 }
-.slides-wrapper .slide {
-	position: absolute;
+ul.slides-wrapper li.slide {
+	float:left;
+	margin:0;
+	padding:0;
 }

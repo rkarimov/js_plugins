@@ -1,20 +1,19 @@
 /* Temporary */
 body {
-	margin:40px;
+	margin:10px;
+}
+.slide-shows{
+	overflow:hidden;
 }
 .slide-show {
-	margin:0 auto;
+	float:left;
 }
-.slide-show  + .slide-show {
-	margin-top:30px !important;
+.slide-show  + .slide-show{
+	margin-left:10px;
 }
-
 .slides-viewport{
 	width:450px;
 	overflow:hidden;
-}
-.slides-wrapper{
-	width:1800px;
 }
 .slides-wrapper{
 	width:1800px;
