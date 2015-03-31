@@ -1,0 +1,9 @@
+(function($){
+	$(document).ready(function(){
+		$('#slide-show').carousel({
+			slides:['images/image_1.png',
+					'images/image_2.png',
+					'images/image_3.png'],
+		});
+	});
+})(jQuery)

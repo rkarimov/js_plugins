@@ -1,0 +1,6 @@
+.slides-wrapper{
+	position:relative;
+}
+.slides-wrapper .slide {
+	position: absolute;
+}
